@@ -16,29 +16,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hh-Za-vIB">
-                                <rect key="frame" x="145" y="401.66666666666669" width="103" height="49"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Detay">
-                                            <attributes>
-                                                <font key="NSFont" size="30" name="Helvetica"/>
-                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="18e-Mj-l9b">
+                                <rect key="frame" x="0.0" y="143" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="detayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzu-YV-0hZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mwr-1l-QWU"/>
                                 </connections>
-                            </button>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-xL-kAU">
+                                <rect key="frame" x="0.0" y="199" width="393" height="619"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="619" id="Mlm-Qp-UAX"/>
+                                    <constraint firstAttribute="width" constant="393" id="zhK-Dr-kQd"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toDoHucre" rowHeight="100" id="4KF-e2-vxV" customClass="ToDoHucre" customModule="TO_DO_PROJECT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4KF-e2-vxV" id="Sp4-xU-B3R">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nw6-dM-qQx">
+                                                    <rect key="frame" x="36" y="15" width="59" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQK-Z5-cOv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelToDoAd" destination="QQK-Z5-cOv" id="xUU-ID-4v3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1hh-Za-vIB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GT3-VH-b07"/>
-                            <constraint firstItem="1hh-Za-vIB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jpX-dD-icj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="18e-Mj-l9b" secondAttribute="bottom" constant="619" id="7vH-sp-61K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZp-xL-kAU" secondAttribute="bottom" id="Cnd-DO-O3d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nZp-xL-kAU" secondAttribute="trailing" id="FiQ-Th-JZ9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nZp-xL-kAU" secondAttribute="bottom" id="QRk-S9-Dx8"/>
+                            <constraint firstItem="18e-Mj-l9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iTL-SX-zOX"/>
+                            <constraint firstItem="18e-Mj-l9b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p5Z-z7-Zs2"/>
+                            <constraint firstItem="nZp-xL-kAU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qnK-JT-j3v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TO-DO" id="6sF-m2-2Uz">
@@ -49,12 +78,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="18e-Mj-l9b" id="O6q-oy-v5M"/>
+                        <outlet property="toDoTableView" destination="nZp-xL-kAU" id="S1k-6A-0MP"/>
                         <segue destination="tRl-iy-3Xv" kind="show" identifier="toDetay" id="Tdf-kz-RC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="-27"/>
+            <point key="canvasLocation" x="1116.793893129771" y="-27.464788732394368"/>
         </scene>
         <!--TO-DO Detay-->
         <scene sceneID="OPP-3e-NlA">

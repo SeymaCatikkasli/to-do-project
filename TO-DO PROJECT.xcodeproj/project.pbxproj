@@ -16,6 +16,7 @@
 		3C0479CB2A79A0B800F962BE /* ToDoDetay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0479CA2A79A0B800F962BE /* ToDoDetay.swift */; };
 		3C0479CD2A79A0E700F962BE /* ToDoKayit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0479CC2A79A0E700F962BE /* ToDoKayit.swift */; };
 		3C0479CF2A79A44500F962BE /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0479CE2A79A44500F962BE /* ToDo.swift */; };
+		3CDC3A782A7D8EB600B00175 /* ToDoHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC3A772A7D8EB600B00175 /* ToDoHucre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3C0479CA2A79A0B800F962BE /* ToDoDetay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetay.swift; sourceTree = "<group>"; };
 		3C0479CC2A79A0E700F962BE /* ToDoKayit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoKayit.swift; sourceTree = "<group>"; };
 		3C0479CE2A79A44500F962BE /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		3CDC3A772A7D8EB600B00175 /* ToDoHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoHucre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		3C0479C62A799F1900F962BE /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				3C497F942A7D872A0009A11C /* tableview */,
 				3C0479C72A799F2B00F962BE /* views */,
 			);
 			path = ui;
@@ -106,6 +109,14 @@
 				3C0479CE2A79A44500F962BE /* ToDo.swift */,
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		3C497F942A7D872A0009A11C /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC3A772A7D8EB600B00175 /* ToDoHucre.swift */,
+			);
+			path = tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				3C0479CF2A79A44500F962BE /* ToDo.swift in Sources */,
 				3C0479B52A799F0200F962BE /* SceneDelegate.swift in Sources */,
 				3C0479CB2A79A0B800F962BE /* ToDoDetay.swift in Sources */,
+				3CDC3A782A7D8EB600B00175 /* ToDoHucre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

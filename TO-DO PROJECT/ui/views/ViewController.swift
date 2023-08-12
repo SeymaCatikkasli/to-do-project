@@ -13,23 +13,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
    var  toDoListesi = [ToDo]()
+    var viewModel = ViewControllerViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchBar.delegate = self
         toDoTableView.delegate = self
         toDoTableView.dataSource = self
-        let t1 = ToDo(to_do_id: 1, to_do_ad: "Ödev Yapılacak")
-        let t2 = ToDo(to_do_id: 2, to_do_ad: "Alışveriş Yapılacak")
-        let t3 = ToDo(to_do_id: 3, to_do_ad: "Cilt Bakımı Yapılacak")
-        toDoListesi.append(t1)
-        toDoListesi.append(t2)
-        toDoListesi.append(t3)
+        
+        _ = viewModel.toDoListesi.subscribe(onNext : {
+            liste in
+            
+            self.toDoListesi = liste
+            self.toDoTableView.reloadData()
+        })
         
 
     
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.toDoYukle()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "toDetay" {
@@ -44,7 +49,7 @@ class ViewController: UIViewController {
 
 extension ViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("To-Do Ara: \(searchText) ")
+        viewModel.ara(aramaKelimesi: searchText)
         
     }
 }
@@ -75,7 +80,7 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive){
                 action in
-                print("TO-DO Sil : \(toDo.to_do_id!)")
+                self.viewModel.sil(to_do_id: toDo.to_do_id!)
                 
             }
             alert.addAction(evetAction)
